@@ -78,3 +78,5 @@ app.post("/api/wonderland", (req, res) => {
   wonderland.push(character);
   res.send(character);
 });
+
+app.use(express.json());
