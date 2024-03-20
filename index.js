@@ -73,6 +73,7 @@ app.get("/api/wonderland/:id", (req, res) => {
 });
 
 app.post("/api/wonderland", (req, res) => {
+  console.log(req.body);
   const character = {
     id: wonderland.length + 1,
     name: req.body.name,
