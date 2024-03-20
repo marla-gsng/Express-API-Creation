@@ -1,6 +1,9 @@
 import express from "express";
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const port = 3000;
 
 app.get("/", (req, res) => {
@@ -80,3 +83,10 @@ app.post("/api/wonderland", (req, res) => {
 });
 
 app.use(express.json());
+
+// app.put("/api/wonderland/:id", (req, res) => {
+//   let { id } = req.params;
+//   const character = wonderland.find((e) => e.id === parseInt(id));
+//   character.name = req.body.name;
+//   res.send(character);
+// });
