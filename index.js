@@ -1,17 +1,16 @@
 import express from "express";
+import cors from "cors";
+import "dotenv/config";
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
-});
-
-app.listen(port, () => {
-  console.log(`Server is listening in on port ${port}`);
 });
 
 const wonderland = [
@@ -84,6 +83,10 @@ app.post("/api/wonderland", (req, res) => {
 });
 
 app.use(express.json());
+
+app.listen(port, () => {
+  console.log(`Server is listening in on port ${port}`);
+});
 
 // app.put("/api/wonderland/:id", (req, res) => {
 //   let { id } = req.params;
