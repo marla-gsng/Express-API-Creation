@@ -88,6 +88,7 @@ app.post("/api/wonderland", (req, res) => {
     id: wonderland.length + 1,
     name: req.body.name,
     kind: req.body.kind,
+    description: req.body.description,
   };
   wonderland.push(character);
   res.send(character);
